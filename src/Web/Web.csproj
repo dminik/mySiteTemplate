@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04404BD2-39FF-411C-9C1E-F3B306C03ED7}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\lib\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.1.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Net">
+      <HintPath>..\packages\Glimpse.0.79\lib\net40\Glimpse.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers">
+      <HintPath>..\packages\microsoft-web-helpers.1.15\lib\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\..\lib\MvcFutures\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\lib\Ninject\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebug">
+      <HintPath>..\..\lib\RouteDebug\RouteDebug.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\v11\ApiV11Registration.cs" />
+    <Compile Include="API\v11\Controllers\ApiV11Controller.cs" />
+    <Compile Include="API\v11\Model\DeleteOperationResult.cs" />
+    <Compile Include="API\v11\Model\StartStopOperationResult.cs" />
+    <Compile Include="API\v11\Model\TaskDescriptor.cs" />
+    <Compile Include="API\v1\ApiV1Registration.cs" />
+    <Compile Include="API\v1\Model\TaskDto.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ElmahController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TaskManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserManagementController.cs" />
+    <Compile Include="Areas\Admin\Models\BlogSummaryModel.cs" />
+    <Compile Include="Areas\Admin\Models\AdminLogin.cs" />
+    <Compile Include="Areas\Admin\Models\TaskSummaryModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserSummaryModel.cs" />
+    <Compile Include="Areas\Blog\BlogAreaRegistration.cs" />
+    <Compile Include="Areas\Blog\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Blog\Controllers\RssController.cs" />
+    <Compile Include="Areas\Blog\Models\BlogPosts.cs" />
+    <Compile Include="Areas\User\Controllers\ShareController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Helpers\BlogPostsHelper.cs" />
+    <Compile Include="Helpers\BlogPostProcessor.cs" />
+    <Compile Include="Helpers\Extensions\UrlContentWithVersionExtension.cs" />
+    <Compile Include="Infrastructure\Error\HandleJsonError.cs" />
+    <Compile Include="Infrastructure\Exceptions\UserNotAuthorized.cs" />
+    <Compile Include="Infrastructure\TrackyNotificationServiceProvider.cs" />
+    <Compile Include="Models\LastArticleFromBlogModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegisterUserModel.cs" />
+    <Compile Include="Areas\User\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="API\v1\Controllers\ApiV1Controller.cs" />
+    <Compile Include="Helpers\Extensions\PagerBuilder.cs" />
+    <Compile Include="Helpers\Extensions\PagerHtmlExtension.cs" />
+    <Compile Include="Infrastructure\Security\TrackyAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\TrackyControllerFactory.cs" />
+    <Compile Include="Infrastructure\TrackyMapping.cs" />
+    <Compile Include="Infrastructure\TrackyServices.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApiTests.html" />
+    <Content Include="App_Readme\glimpse.readme.txt" />
+    <Content Include="Areas\Admin\Views\BlogManagement\AddPost.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\AllPosts.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\Deleted.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\Posted.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\Summary.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\Updated.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogManagement\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TaskManagement\Summary.cshtml" />
+    <Content Include="Areas\Admin\Views\UserManagement\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserManagement\Summary.cshtml" />
+    <Content Include="Areas\Admin\Views\UserManagement\Table.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\DateTime.ascx" />
+    <Content Include="Areas\Blog\Views\Posts\Index.cshtml" />
+    <Content Include="Areas\Blog\Views\Rss\Feed.cshtml" />
+    <Content Include="Areas\Blog\Views\Shared\Pager.cshtml" />
+    <Content Include="Areas\Blog\Views\Posts\PostByUrl.cshtml" />
+    <Content Include="Content\confirm.css" />
+    <Content Include="Content\custom-theme\images\ui-bg_diagonals-thick_60_eeeeee_40x40.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Content\custom-theme\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Content\custom-theme\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Content\custom-theme\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\custom-theme\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Content\custom-theme\images\ui-icons_999999_256x240.png" />
+    <Content Include="Content\custom-theme\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Content\custom-theme\jquery-ui-1.8.10.custom.css" />
+    <Content Include="Content\Images\dashboard\arrow-right.png" />
+    <Content Include="Content\Images\dashboard\arrow-up.png" />
+    <Content Include="Content\Images\dashboard\cal.png" />
+    <Content Include="Content\Images\dashboard\delete.png" />
+    <Content Include="Content\Images\dashboard\stop.png" />
+    <Content Include="Content\Images\dashboard\tick.png" />
+    <Content Include="Content\Images\dashboard\undo.png" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\public\footer-backround.png" />
+    <Content Include="Content\Images\public\rss.png" />
+    <Content Include="Content\share.css" />
+    <Content Include="humans.txt" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\Controls\control.editposts.js" />
+    <Content Include="Scripts\Controllers\controller.editposts.js" />
+    <Content Include="Scripts\ga.js" />
+    <Content Include="FunctionalTests.html" />
+    <Content Include="Scripts\jquery-ui-1.8.10.custom.min.js" />
+    <Content Include="Scripts\jquery.confirm.js" />
+    <Content Include="Scripts\Tests\acceptance\tests.dashboard.js" />
+    <Content Include="Scripts\Tests\acceptance\tests.home.js" />
+    <Content Include="Scripts\Tests\acceptance\tests.signup.js" />
+    <Content Include="Scripts\Tests\api\tests.api.v11.js" />
+    <Content Include="Scripts\Tests\unit\tests.control.editposts.js" />
+    <Content Include="Scripts\Tests\unit\tests.control.tasks.js" />
+    <Content Include="Scripts\Api\api.js" />
+    <Content Include="Scripts\Controllers\controller.dashboard.js" />
+    <Content Include="Scripts\Controls\control.tasks.js" />
+    <Content Include="UnitTests.html" />
+    <Content Include="Scripts\Tests\unit\tests.controller.registration.js" />
+    <Content Include="Views\Error\GenericError.cshtml" />
+    <Content Include="Views\Home\ApiV10.cshtml" />
+    <Content Include="Views\Home\ApiV11.cshtml" />
+    <Content Include="Views\Home\Faq.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Areas\User\Views\Dashboard\Index.cshtml" />
+    <Content Include="Content\admin-login.css" />
+    <Content Include="Content\admin.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\Images\dashboard\back.png" />
+    <Content Include="Content\Images\dashboard\glow.png" />
+    <Content Include="Content\Images\login\back.png" />
+    <Content Include="Content\Images\public\screenshot.png" />
+    <Content Include="Content\public-login.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\public.css" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\jquery.postJson.js" />
+    <Content Include="Scripts\Controllers\controller.registration.js" />
+    <Content Include="Views\Shared\ApiImplementations.cshtml" />
+    <Content Include="Views\Shared\ApiTableOfContent.cshtml" />
+    <Content Include="Views\Shared\Copyright.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Home\LastArticleFromBlog.cshtml" />
+    <Content Include="Views\Shared\Navigation.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Infrastructure\Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Trackyt.Core\Trackyt.Core.csproj">
+      <Project>{631248AA-496F-40D3-9C1B-E30B09219D76}</Project>
+      <Name>Trackyt.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\User\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Blog\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_UserManagementLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_BlogManagementLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\User\Views\Shared\_DashboardLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_TaskManagementLayout.cshtml" />
+    <Content Include="packages.config" />
+    <Content Include="Areas\User\Views\Share\Index.cshtml" />
+    <Content Include="Areas\User\Views\Share\Error.cshtml" />
+    <Content Include="Views\Shared\_ApiLayout.cshtml" />
+    <Content Include="Views\Registration\Mobile.cshtml" />
+    <Content Include="Views\Registration\Success.cshtml" />
+    <Content Include="Views\Shared\_PublicLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(Configuration)'=='Release'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>33000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/master</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+@model Web.Models.RegisterUserModel
+@using Web.Helpers.Extensions
+@using Microsoft.Web.Helpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trackyt.net | Registration</title>
+    <link rel="shortcut icon" href="~/Content/Images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="~/Content/Images/favicon.ico" type="image/ico" />
+
+    <link href="@(Url.ContentWithVersion("~/Content/public-login.css"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="content">
+        <h1 class="left">Sign Up</h1>
+        <div class="clear"></div>
+
+        @using (Html.BeginForm("registermobile", "registration", FormMethod.Post, new { id = "signup_form" })) {
+            <div id="PasswordValidationMessage" class="validation-summary-errors"></div>
+            @Html.ValidationSummary(true, "Registration was unsuccessful. Please correct the errors and try again.")
+                
+            <fieldset>
+                <div id="email-container">
+                    <label for="email">Email</label>
+                    @Html.TextBoxFor(m => m.Email)
+                </div>
+                <div id="password-container">
+                    <label for="password">Password</label>
+                    @Html.TextBoxFor(m => m.Password, new { type = "password" })
+                </div>
+                <div id="confirmation-container">
+                    <label for="confim">Password confirmation</label>
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { type = "password" })
+                </div>
+            </fieldset>                
+            @ReCaptcha.GetHtml(theme: "clean")
+            <input id="submit-button" type="submit" value="Signup"/>      
+        }
+    </div>
+
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@(Url.ContentWithVersion("~/Scripts/Controllers/controller.registration.js"))" type="text/javascript"></script>
+</body>
+</html>
