@@ -17,7 +17,7 @@ namespace Trackyt.Core.DAL.Repositories.Impl
         /// Constructor
         /// </summary>
         public BlogPostsRepository() : this(
-            new TrackytDataContext(ConfigurationManager.ConnectionStrings["tracytdb"].ConnectionString))
+            new TrackytDataContext())
         {
 
         }
@@ -48,15 +48,15 @@ namespace Trackyt.Core.DAL.Repositories.Impl
 
             if (blogPost.Id == 0)
             {
-                _context.BlogPosts.InsertOnSubmit(blogPost);
+                _context.BlogPosts.Add(blogPost);
             }
-            _context.SubmitChanges();
+            _context.SaveChanges();
         }
 
         public void Delete(DataModel.BlogPost blogPost)
         {
-            _context.BlogPosts.DeleteOnSubmit(blogPost);
-            _context.SubmitChanges();
+            _context.BlogPosts.Remove(blogPost);
+			_context.SaveChanges();
         }
     }
 }

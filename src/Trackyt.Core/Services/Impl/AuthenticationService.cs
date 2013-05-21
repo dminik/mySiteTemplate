@@ -88,8 +88,9 @@ namespace Trackyt.Core.Services.Impl
             Authenticate(email, password);
         }
 
-        public bool ValidateCaptcha() {
-            return ReCaptcha.Validate(privateKey: "6Lcc58YSAAAAANpVZwOBTg1q1E2lj2VJ7ULpnANy");
+        public bool ValidateCaptcha()
+        {
+	        return true;//  ReCaptcha.Validate(privateKey: "6Lcc58YSAAAAANpVZwOBTg1q1E2lj2VJ7ULpnANy");
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Trackyt.Core.DAL.Repositories.Impl
         /// Constructor
         /// </summary>
         public TasksRepository() : this(
-            new TrackytDataContext(ConfigurationManager.ConnectionStrings["tracytdb"].ConnectionString))
+            new TrackytDataContext())
         {
 
         }
@@ -42,16 +42,16 @@ namespace Trackyt.Core.DAL.Repositories.Impl
             if (task.Id == 0)
             {
                 task.CreatedDate = DateTime.UtcNow;
-                _context.Tasks.InsertOnSubmit(task);
+                _context.Tasks.Add(task);
             }
-            _context.SubmitChanges();
+			_context.SaveChanges();
         }
 
         public void Delete(Task task)
         {
 
-            _context.Tasks.DeleteOnSubmit(task);
-            _context.SubmitChanges();
+            _context.Tasks.Remove(task);
+            _context.SaveChanges();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Trackyt.Core.DAL.Repositories.Impl
         /// Constructor
         /// </summary>
         public CredentialsRepository() : this(
-            new TrackytDataContext(ConfigurationManager.ConnectionStrings["tracytdb"].ConnectionString))
+            new TrackytDataContext())
         {
 
         }

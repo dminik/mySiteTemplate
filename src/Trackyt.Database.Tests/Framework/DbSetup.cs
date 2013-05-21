@@ -10,7 +10,7 @@ namespace Trackyt.Core.Tests.Framework
 {
     public class DbSetup : IDisposable
     {
-        private TrackytDataContext _model = new TrackytDataContext(ConfigurationManager.ConnectionStrings["testdb"].ConnectionString);
+        private TrackytDataContext _model = new TrackytDataContext();
         private TransactionScope _transaction = new TransactionScope();
  
         public DbSetup()
@@ -33,8 +33,8 @@ namespace Trackyt.Core.Tests.Framework
                 //Password = "test_pass2"
             };
 
-            _model.Users.InsertOnSubmit(User);
-            _model.SubmitChanges();
+            _model.Users.Add(User);
+            _model.SaveChanges();
         }
 
         public User User { get; private set; }

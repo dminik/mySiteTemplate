@@ -14,7 +14,7 @@ namespace Trackyt.Core.DAL.Repositories.Impl
         private TrackytDataContext _context;
 
         public UsersRepository()
-            : this(new TrackytDataContext(ConfigurationManager.ConnectionStrings["tracytdb"].ConnectionString))
+            : this(new TrackytDataContext())
         {
 
         }
@@ -42,16 +42,16 @@ namespace Trackyt.Core.DAL.Repositories.Impl
                 if (Users.WithEmail(user.Email) != null)
                     throw new DuplicateKeyException(user);
 
-                _context.Users.InsertOnSubmit(user);
+                _context.Users.Add(user);
             }
 
-            _context.SubmitChanges();
+            _context.SaveChanges();
         }
 
         public void Delete(User user)
         {
-            _context.Users.DeleteOnSubmit(user);
-            _context.SubmitChanges();
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
 
         #endregion
