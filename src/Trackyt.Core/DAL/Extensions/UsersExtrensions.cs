@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Trackyt.Core.DAL.DataModel;
 
 namespace Trackyt.Core.DAL.Extensions
@@ -22,5 +19,10 @@ namespace Trackyt.Core.DAL.Extensions
         {
             return users.Where(u => u.Temp == flag);
         }
+
+		public static Project WithName(this IQueryable<Project> projects, string name)
+		{
+			return projects.Where(u => u.Name == name).SingleOrDefault();
+		}
     }
 }

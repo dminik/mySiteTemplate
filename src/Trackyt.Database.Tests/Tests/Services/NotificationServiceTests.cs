@@ -28,7 +28,7 @@ namespace Trackyt.Database.Tests.Tests.Services
                 var notificationService = new NotificationService(emailService);
 
                 // act / assert
-                notificationService.NotifyUserOnRegistration("alexander.beletsky@gmail.com", "password");
+                notificationService.NotifyUserOnRegistration("dmytro.nikulin@gmail.com", "password");
             }
         }
     }

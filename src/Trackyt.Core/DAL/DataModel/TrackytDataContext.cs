@@ -9,7 +9,9 @@
 		public DbSet<Task> Tasks { get; set; }
 		public DbSet<BlogPost> BlogPosts { get; set; }
 		public DbSet<Credential> Credentials { get; set; }
-	
+
+		public DbSet<Project> Projects { get; set; }
+		public DbSet<SpentTime> SpentTimes { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

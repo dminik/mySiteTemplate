@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="CoverageExcludeAttribute.cs" />
     <Compile Include="DAL\DataModel\BlogPost.cs" />
+    <Compile Include="DAL\DataModel\SpentTime.cs" />
+    <Compile Include="DAL\DataModel\Project.cs" />
     <Compile Include="DAL\DataModel\TrackytDataContext.cs" />
     <Compile Include="DAL\DataModel\Task.cs" />
     <Compile Include="DAL\DataModel\User.cs" />
@@ -75,6 +77,10 @@
     <Compile Include="DAL\Repositories\IBlogPostsRepository.cs" />
     <Compile Include="DAL\Repositories\ICredentialsRepository.cs" />
     <Compile Include="DAL\Repositories\Impl\BlogPostsRepository.cs" />
+    <Compile Include="DAL\Repositories\ISpentTimesRepository.cs" />
+    <Compile Include="DAL\Repositories\Impl\SpentTimeRepository.cs" />
+    <Compile Include="DAL\Repositories\IProjectsRepository.cs" />
+    <Compile Include="DAL\Repositories\Impl\ProjectsRepository.cs" />
     <Compile Include="DAL\Repositories\Impl\CredentialsRepository.cs" />
     <Compile Include="DAL\Repositories\Impl\TasksRepository.cs" />
     <Compile Include="DAL\Repositories\Impl\UsersRepository.cs" />
