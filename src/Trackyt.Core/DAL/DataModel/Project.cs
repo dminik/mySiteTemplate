@@ -10,6 +10,6 @@
 
 		public string Name { get; set; }
 
-		public ICollection<SpentTime> SpentTimes { get; set; }	
+		public virtual ICollection<SpentTime> SpentTimes { get; set; }	
 	}
 }
