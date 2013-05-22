@@ -13,6 +13,10 @@
 		public DbSet<Project> Projects { get; set; }
 		public DbSet<SpentTime> SpentTimes { get; set; }
 
+		public TrackytDataContext() { }
+
+		public TrackytDataContext(string connection) : base(connection) { }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

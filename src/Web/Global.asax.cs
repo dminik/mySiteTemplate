@@ -9,7 +9,12 @@ using Web.Infrastructure;
 
 namespace Web
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+	using System.Data.Entity;
+
+	using Trackyt.Core.DAL.DataModel;
+	using Trackyt.Core.DAL.Repositories;
+
+	// Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
     [CoverageExcludeAttribute]
@@ -30,7 +35,9 @@ namespace Web
         }
 
         protected void Application_Start()
-        {
+        {						
+			RepositoriesInitializer.InitDB(new TrackytDataContext());
+
             // Routing
             AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);

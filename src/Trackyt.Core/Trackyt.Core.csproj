@@ -72,6 +72,8 @@
     <Compile Include="DAL\DataModel\___Models.cs" />
     <Compile Include="DAL\DataModel\Credential.cs" />
     <Compile Include="DAL\Extensions\BlogPostsExtensions.cs" />
+    <Compile Include="DAL\Extensions\SpentTimesExtrensions.cs" />
+    <Compile Include="DAL\Extensions\ProjectsExtrensions.cs" />
     <Compile Include="DAL\Extensions\TasksExtensions.cs" />
     <Compile Include="DAL\Extensions\UsersExtrensions.cs" />
     <Compile Include="DAL\Repositories\IBlogPostsRepository.cs" />

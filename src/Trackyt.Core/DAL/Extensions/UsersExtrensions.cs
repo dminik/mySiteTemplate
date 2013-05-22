@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+
 using Trackyt.Core.DAL.DataModel;
 
 namespace Trackyt.Core.DAL.Extensions

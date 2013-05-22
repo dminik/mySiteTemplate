@@ -58,6 +58,8 @@
     <Compile Include="HttpSimulator\SimulatedHttpRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\DAL\BlogPostsRepositoryTests.cs" />
+    <Compile Include="Tests\DAL\SpentTimesRepositoryTests.cs" />
+    <Compile Include="Tests\DAL\ProjectsRepositoryTests.cs" />
     <Compile Include="Tests\DAL\CredentialsRepositoryTests.cs" />
     <Compile Include="Tests\DAL\TasksRepositoryTests.cs" />
     <Compile Include="Tests\DAL\UsersRepositoryTests.cs" />

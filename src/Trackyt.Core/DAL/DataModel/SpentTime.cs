@@ -19,6 +19,11 @@
 		public uint Amount { get; set; }
 
 		/// <summary>
+		/// Project Id for which was spent time
+		/// </summary>
+		public int ProjectId { get; set; }
+
+		/// <summary>
 		/// Project for which was spent time
 		/// </summary>
 		public virtual Project Project { get; set; }
