@@ -5,13 +5,12 @@ using Trackyt.Core.DAL.DataModel;
 namespace Trackyt.Core.Tests.Framework
 {
 	using System.Configuration;
-	using System.Data.Entity;
 
 	using Trackyt.Core.DAL.Repositories;
 
 	public class DbSetup : IDisposable
 	{
-		private TrackytDataContext _model;
+		private TrackytDataContext _dbContext;
 		private TransactionScope _transaction;
  
 		public DbSetup()
@@ -19,14 +18,17 @@ namespace Trackyt.Core.Tests.Framework
 			Init();
 		}
 
-		public TrackytDataContext Context { get { return _model; } }
+		public TrackytDataContext Context { get { return _dbContext; } }
 
 		private void Init()
 		{			
-			_model = new TrackytDataContext(ConfigurationManager.ConnectionStrings["testdb"].ConnectionString);
-			RepositoriesInitializer.InitDB(_model);
+			_dbContext = new TrackytDataContext(ConfigurationManager.ConnectionStrings["testdb"].ConnectionString);
+			RepositoriesInitializer.InitDB(_dbContext);
+
+			_dbContext.Database.Connection.Open();
 			_transaction = new TransactionScope();
 
+			
 			AddTestUser();
 			AddTestProject();
 		}
@@ -39,8 +41,8 @@ namespace Trackyt.Core.Tests.Framework
 				//Password = "test_pass2"
 			};
 
-			_model.Users.Add(User);
-			_model.SaveChanges();
+			_dbContext.Users.Add(User);
+			_dbContext.SaveChanges();
 		}
 
 		private void AddTestProject()
@@ -50,8 +52,8 @@ namespace Trackyt.Core.Tests.Framework
 				Name = "Test Project"				
 			};
 
-			_model.Projects.Add(Project);
-			_model.SaveChanges();
+			_dbContext.Projects.Add(Project);
+			_dbContext.SaveChanges();
 		}
 
 		public User User { get; private set; }
@@ -62,7 +64,9 @@ namespace Trackyt.Core.Tests.Framework
 
 		public void Dispose()
 		{
-			_transaction.Dispose();
+			if(_transaction != null)
+				_transaction.Dispose();
+
 			_transaction = null;
 		}
 

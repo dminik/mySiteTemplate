@@ -285,6 +285,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Infrastructure\Helpers\" />
   </ItemGroup>
