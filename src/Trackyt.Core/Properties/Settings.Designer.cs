@@ -25,65 +25,10 @@ namespace Trackyt.Core.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=D:\\Development\\Projects\\Trackyt.net\\src" +
-            "\\Trackyt.Core\\DAL\\DB\\trackyourtasksdb.mdf;Integrated Security=True;User Instance" +
-            "=True")]
-        public string trackyourtasksdbConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Setting {
             get {
-                return ((string)(this["trackyourtasksdbConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SEEKEY-NOTE\\SQLEXPRESS;Initial Catalog=tracky;Integrated Security=Tru" +
-            "e")]
-        public string trackyConnectionString {
-            get {
-                return ((string)(this["trackyConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=trackytdb;Integrated Security=True")]
-        public string trackytdbConnectionString {
-            get {
-                return ((string)(this["trackytdbConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=trackytdb_patchv102;Integrated Security=" +
-            "True")]
-        public string trackytdb_patchv102ConnectionString {
-            get {
-                return ((string)(this["trackytdb_patchv102ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=trackytdb;Integrated Security=True")]
-        public string trackytdbConnectionString1 {
-            get {
-                return ((string)(this["trackytdbConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=trackytdbstage;Integrated Security=True")]
-        public string trackytdbstageConnectionString {
-            get {
-                return ((string)(this["trackytdbstageConnectionString"]));
+                return ((string)(this["Setting"]));
             }
         }
     }
